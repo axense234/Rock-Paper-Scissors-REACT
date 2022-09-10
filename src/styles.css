@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  box-sizing: border-box;
+}
+
+.rps-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10rem 0;
+  margin-top: 5rem;
+  gap: 5rem;
+  transition: transform 0.5s;
+}
+
+.rps-page-content {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.rps-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.rps-title > h1 {
+  font-size: 5rem;
+  letter-spacing: 1rem;
+}
+
+.rps-title > p {
+  align-self: flex-end;
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.rps-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+  width: 75%;
+}
+
+.rps-game-icons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.rps-game-result > h2 {
+  font-size: 2.3rem;
+  letter-spacing: 0.3rem;
+  transition: font-size 0.5s;
+}
+
+.rps-game-result > p {
+  font-size: 1.5rem;
+  transition: font-size 0.5s;
+}
+
+.rps-options-form {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.rps-options-form > button {
+  width: 100%;
+  letter-spacing: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.rps-options > h2 {
+  text-align: center;
+  letter-spacing: 0.4rem;
+  font-size: 3rem;
+}
+
+.rps-options {
+  width: 25%;
+}
+
+.rps-option {
+  width: 100%;
+}
+
+.rps-option > label {
+  font-size: 1.5rem;
+}
+
+img {
+  width: 175px;
+}
+
+.rps-game-result {
+  border: 3px solid black;
+  padding: 1rem;
+  background: linear-gradient(to top, red, pink, white);
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 0.5s;
+  margin-bottom: 5rem;
+}
+
+#score-number {
+  text-align: end;
+  padding: 1rem;
+  font-size: 5rem;
+}
+
+/* Small Devices */
+@media all and (max-width: 1020px) {
+  .rps-page {
+    transform: scale(0.8);
+  }
+  .rps-game-icons {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .rps-game-result > h2 {
+    font-size: 1.5rem;
+  }
+  .rps-game-result > p {
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Devices */
+
+@media all and (max-width: 400px) {
+  .rps-options-form > button {
+    width: 100%;
+    letter-spacing: 0.5rem;
+    font-size: 1rem;
+  }
+  .rps-page {
+    transform: scale(0.5);
+    margin: 0;
+  }
+}
