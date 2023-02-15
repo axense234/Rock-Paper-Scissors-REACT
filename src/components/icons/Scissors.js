@@ -6,8 +6,8 @@ const Scissors = () => {
   const { onRPSIconClick } = useGlobalContext();
   return (
     <img
-      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/310/scissors_2702-fe0f.png"
-      alt="Scissors"
+      src='https://png.pngtree.com/element_our/20190529/ourmid/pngtree-an-office-scissors-illustration-image_1227636.jpg'
+      alt='Scissors'
       onClick={() => onRPSIconClick("scissors")}
     />
   );

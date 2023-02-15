@@ -6,8 +6,8 @@ const Paper = () => {
   const { onRPSIconClick } = useGlobalContext();
   return (
     <img
-      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/310/page-facing-up_1f4c4.png"
-      alt="Paper"
+      src='https://png.pngtree.com/png-vector/20220624/ourmid/pngtree-torn-notebook-paper-white-coil-png-image_5317122.png'
+      alt='Paper'
       onClick={() => onRPSIconClick("paper")}
     />
   );

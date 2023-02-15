@@ -6,8 +6,8 @@ const Rock = () => {
   const { onRPSIconClick } = useGlobalContext();
   return (
     <img
-      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/310/rock_1faa8.png"
-      alt="Rock"
+      src='https://i.pinimg.com/originals/9d/bb/14/9dbb14a92a7611794f3e5a0c80e4bad6.png'
+      alt='Rock'
       onClick={() => onRPSIconClick("rock")}
     />
   );
