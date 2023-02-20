@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+.rps-icon {
+  font-size: 10rem;
+
+  transition: transform 0.3 ease-in;
+}
+
+.rps-icon:hover {
+  transform: scale(1.1);
+}
+
 .rps-page {
   display: flex;
   flex-direction: column;
@@ -95,20 +105,25 @@
 
 .rps-option {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+
+  transition: transform 0.1s ease-in;
+}
+
+.rps-option:hover {
+  transform: scale(1.1);
 }
 
 .rps-option > label {
   font-size: 1.5rem;
 }
 
-img {
-  width: 175px;
-}
-
 .rps-game-result {
   border: 3px solid black;
   padding: 1rem;
-  background: linear-gradient(to top, red, pink, white);
   border-radius: 1rem;
   opacity: 0;
   transition: opacity 0.5s;

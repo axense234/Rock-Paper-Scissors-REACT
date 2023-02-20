@@ -1,17 +1,19 @@
+// React
 import React, { useState } from "react";
 // Context
 import { useGlobalContext } from "../context";
 // Options
-import { rpsOptions } from "../data/rpsOptions";
+import { rpsOptions } from "../data";
 
 const RPSOptions = () => {
   const { handleRPSOptions } = useGlobalContext();
   const [currentOption, setCurrentOption] = useState("");
+
   return (
-    <section className="rps-options">
+    <section className='rps-options'>
       <h2>Options</h2>
       <form
-        className="rps-options-form"
+        className='rps-options-form'
         onSubmit={(e) => handleRPSOptions(currentOption, e)}
       >
         {rpsOptions.map((option) => {
@@ -20,10 +22,10 @@ const RPSOptions = () => {
               optionName={option.optionName}
               key={option.id}
               setCurrentOption={setCurrentOption}
-            ></RPSOption>
+            />
           );
         })}
-        <button type="submit">APPLY</button>
+        <button type='submit'>APPLY</button>
       </form>
     </section>
   );
@@ -31,11 +33,11 @@ const RPSOptions = () => {
 
 const RPSOption = ({ optionName, setCurrentOption }) => {
   return (
-    <div className="rps-option">
+    <div className='rps-option'>
       <input
-        type="radio"
+        type='radio'
         value={optionName}
-        name="rps-option"
+        name='rps-option'
         id={optionName}
         onChange={(e) => setCurrentOption(e.target.value)}
       />

@@ -1,6 +1,7 @@
+// React
 import React, { useContext, createContext, useState, createRef } from "react";
-// Hooks
-import CalcGameResult from "./helper/CalcGameResult";
+// Data
+import { gameResults } from "./data";
 
 const AppContext = createContext(null);
 
@@ -21,9 +22,41 @@ const AppProvider = ({ children }) => {
   const onRPSIconClick = (decision) => {
     const randomNumber = Math.floor(Math.random() * 3);
     const botDecision = decisions[randomNumber];
-    const result = CalcGameResult(decision, botDecision);
+    const { results } = gameResults.find(
+      (gameResult) => gameResult.type === decision
+    );
+
+    let resultMessage;
+    let modalColor;
+    switch (results[botDecision]) {
+      case 1:
+        resultMessage = `The Bot chose ${botDecision}! You won!`;
+        modalColor = "green";
+        break;
+      case 0:
+        resultMessage = `The Bot chose ${botDecision}! You drew!`;
+        modalColor = "grey";
+        break;
+      case -1:
+        resultMessage = `The Bot chose ${botDecision}! You lost!`;
+        modalColor = "red";
+        break;
+      default:
+        throw new Error("Invalid result number.");
+    }
+
+    const result = {
+      msg: resultMessage,
+      score: results[botDecision],
+      modalColor,
+    };
+
     if (impossibleMode) {
-      setGameResult({ msg: "You lost...", score: -999999999 });
+      setGameResult({
+        msg: "You lost...",
+        score: -999999999,
+        modalColor: "red",
+      });
       localStorage.setItem("RPS Score", -9999999999);
       setScore(-99999999999);
     } else {
