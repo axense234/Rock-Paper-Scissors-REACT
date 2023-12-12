@@ -8,11 +8,15 @@
 .rps-icon {
   font-size: 10rem;
 
-  transition: transform 0.3 ease-in;
+  transition: transform 0.1s ease-in, opacity 0.2s ease-in;
 }
 
 .rps-icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
+}
+
+.rps-icon-inactive{
+  opacity: 0.3;
 }
 
 .rps-page {

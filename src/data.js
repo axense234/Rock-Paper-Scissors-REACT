@@ -9,3 +9,5 @@ export const gameResults = [
   { id: 2, type: "paper", results: { rock: 1, paper: 0, scissors: -1 } },
   { id: 3, type: "scissors", results: { rock: -1, paper: 1, scissors: 0 } },
 ];
+
+export const actionDowntime = 2000; // miliseconds

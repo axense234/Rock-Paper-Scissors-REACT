@@ -4,8 +4,8 @@ import { useGlobalContext } from "../../context";
 import { GiRock } from "react-icons/gi";
 
 const Rock = () => {
-  const { onRPSIconClick } = useGlobalContext();
-  return <GiRock onClick={() => onRPSIconClick("rock")} className='rps-icon' />;
+  const { onRPSIconClick, optionClicked } = useGlobalContext();
+  return <GiRock onClick={() => onRPSIconClick("rock")} className={optionClicked !== 1? "rps-icon rps-icon-inactive" : "rps-icon"} />;
 };
 
 export default Rock;

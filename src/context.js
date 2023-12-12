@@ -1,7 +1,13 @@
 // React
-import React, { useContext, createContext, useState, createRef } from "react";
+import React, {
+  useContext,
+  createContext,
+  useState,
+  createRef,
+  useEffect,
+} from "react";
 // Data
-import { gameResults } from "./data";
+import { gameResults, actionDowntime } from "./data";
 
 const AppContext = createContext(null);
 
@@ -15,11 +21,16 @@ const AppProvider = ({ children }) => {
   const [gameResult, setGameResult] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [impossibleMode, setImpossibleMode] = useState(false);
+  const [optionClicked, setOptionClicked] = useState(0);
 
   const modalRef = createRef(null);
 
   // When an Icon is clicked
   const onRPSIconClick = (decision) => {
+    setOptionClicked(
+      gameResults.find((resultDecision) => resultDecision.type === decision).id
+    );
+
     const randomNumber = Math.floor(Math.random() * 3);
     const botDecision = decisions[randomNumber];
     const { results } = gameResults.find(
@@ -80,6 +91,15 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setOptionClicked(0);
+    }, actionDowntime);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [optionClicked]);
+
   return (
     <AppContext.Provider
       value={{
@@ -90,6 +110,8 @@ const AppProvider = ({ children }) => {
         modalRef,
         score,
         handleRPSOptions,
+        optionClicked,
+        setOptionClicked,
       }}
     >
       {children}

@@ -4,11 +4,11 @@ import { useGlobalContext } from "../../context";
 import { GiScissors } from "react-icons/gi";
 
 const Scissors = () => {
-  const { onRPSIconClick } = useGlobalContext();
+  const { onRPSIconClick, optionClicked } = useGlobalContext();
   return (
     <GiScissors
       onClick={() => onRPSIconClick("scissors")}
-      className='rps-icon'
+      className={optionClicked !== 3 ? "rps-icon rps-icon-inactive" : "rps-icon"}
     />
   );
 };

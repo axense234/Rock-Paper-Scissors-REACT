@@ -2,6 +2,8 @@
 import { useEffect } from "react";
 // Context
 import { useGlobalContext } from "../context";
+// Data
+import { actionDowntime } from "../data";
 
 const RPSGameModal = () => {
   const { gameResult, showModal, setShowModal, modalRef } = useGlobalContext();
@@ -31,7 +33,7 @@ const useModalTransition = (showModal, modalRef, setShowModal) => {
       modal.style.opacity = "1";
       timeout = setTimeout(() => {
         setShowModal(false);
-      }, 2000);
+      }, actionDowntime);
     } else {
       modal.style.opacity = "0";
     }
